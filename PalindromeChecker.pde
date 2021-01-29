@@ -17,13 +17,57 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  return false;
+  
+  if((reverse(noCapitals(noSpaces(onlyLetters(word))))).equals(reverse(noCapitals(noSpaces(onlyLetters(word)))))){
+    return true;
+  }
+   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+    String s = "";
+  if(str.length() != 0){
+    for(int i = str.length();i>0;i--){
+    s = s + str.charAt(i-1);
+    }
+  }
+  return s;
+}
+public String noSpaces(String str){
+  String ans = "";
+  if (str.length() == 0){
+    return "";
+  }
+  for(int i = 0; i<str.length();i++){
+    if(str.charAt(i) != ' '){
+      ans = ans + str.charAt(i);
+    }
+  }
+  return ans;
 }
 
+public String noCapitals(String str){
+  return str.toLowerCase();
+}
+
+public int numLetters(String str){
+  int x = 0;
+  for(int i = 0; i <str.length();i++){
+    if(Character.isLetter(str.charAt(i)) == true){
+      x++;
+    }
+  }
+  return x;
+}
+
+public String onlyLetters(String str){
+  //boolean x = true
+  String g = "";
+  for(int i = 0; i < str.length();i++){
+    if(Character.isLetter(str.charAt(i))){
+      g = g + str.charAt(i);
+      }
+  }
+  return g;
+}
 
