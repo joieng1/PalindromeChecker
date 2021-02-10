@@ -18,7 +18,7 @@ public boolean palindrome(String word)
 {
   //your code here
   
-  if((reverse(noCapitals(noSpaces(onlyLetters(word))))).equals(reverse(noCapitals(noSpaces(onlyLetters(word)))))){
+  if((reverse(noCapitals(noSpaces(onlyLetters(word))))).equals(noCapitals(noSpaces(onlyLetters(word))))){
     return true;
   }
    return false;
@@ -70,4 +70,3 @@ public String onlyLetters(String str){
   }
   return g;
 }
-
